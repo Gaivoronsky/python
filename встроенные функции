@@ -1,0 +1,39 @@
+abs(-1)#взятие числа по модулю
+max(1,2,3,4,5)
+min(1,2,3,4,5)
+pow(2,8)#возведение в степень 
+round(3.14, 1)#округление
+sum([1,2,3,4,5])#суммирование
+h = hex(42)#переводит в 16 систему 
+o = oct(42)#переводит в 8 систему 
+b = bin(42)#переводит в бинарную систему
+
+all_true1 = all([True, True, True])
+all_true2 = all([True, False, True])#возвращает True только если все значение True 
+print(all_true1)
+print(all_true2)
+players = [('Carlsen', 2842), ('Caruana', 2822), ('Mamedyarov', 2801), ('Ding', 2797), ('Giri', 2780)]
+print(all(rating > 2700 for _, rating in players))
+
+any_true1 = any([False, False, False])
+any_true2 = any([False, True, False]) #возвращает True если хоть одно значение True 
+print(any_true1)
+print(any_true2)
+print(any(rating > 2800 for _, rating in players))
+
+letters = 'abcd'
+numders = (10, 20, 30)
+zipped = zip(letters, numders)#склеивает два типа
+print(zipped)
+zipped_list = list(zipped)
+print(zipped_list)
+name = ('Carlsen', 'Caruana', 'Mamedyarov', 'Ding', 'Giri')
+rating = (2842, 2822, 2801, 2797, 2780)
+players_zipped = zip(name, rating)
+players_zipped = dict(players_zipped)
+print(players_zipped)
+
+code = ord('a')#преобразует в код символа
+c = chr(code)#код символа преобразует в символа 
+
+
