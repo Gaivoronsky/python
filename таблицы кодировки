@@ -1,0 +1,27 @@
+import sys
+print(sys.getdefaultencoding()) #вывод таблицы кодировки символов 
+
+ord('a') #номер символа 
+chr(97) #cимвол под этим номером 
+
+python.encode(‘кодировочная таблица’) #переводит информацию в битовый вид 
+
+ascii, utf8, utf16 #таблицы кодировки 
+
+ba = bytearray(b'hello')
+ba[0] = 87 #позволяет присваивать другие значения переменной 
+
+result = str(str_in_bytes, 'utf8')
+result = str_in_bytes.decode('utf8') #при декодировке  необходимо указывать вид таблицы
+
+jpeg = [120, 3, 255, 0, 100]
+with open('btest.bin', 'w+b') as file:
+    file.write(bytes(jpeg))
+
+with open('btest.bin', 'rb') as file:
+    data = file.read()
+    for b in data:
+        print(int(b)) #при работе с файлом для кодировки\декодировки необходимо добавлять ‘b’
+
+
+
