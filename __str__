@@ -1,0 +1,28 @@
+class Point():
+
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    def __str__(self):
+        return f'Point x = {self.x}, y = {self.y}'
+
+class Road():
+
+    def __init__(self, length):
+        self.length = length
+
+    def __len__(self):
+        return self.length
+
+    def __str__(self):
+        return f'A road of legth = {self.length}'
+
+    def __del__(self):
+        print('The road has been destroyed')
+
+s = Point(4 ,5)
+print(s)
+
+r = Road(300)
+print(len(r))
