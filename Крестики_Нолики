@@ -1,0 +1,88 @@
+import os
+
+def print_XO(table):
+    print(f'{table[0]} | {table[1]} | {table[2]}\n'
+           '_________\n'
+          f'{table[3]} | {table[4]} | {table[5]}\n'
+           '_________\n'
+          f'{table[6]} | {table[7]} | {table[8]}')
+
+def win(table):
+    if table[0] == table[1] and table[1] == table[2] and table[0] != ' ':
+        if table[0] == 'X':
+            print('Win to X!')
+            return 1
+        else:
+            print('Win to O!')
+            return 1
+    if table[0] == table[3] and table[3] == table[6] and table[0] != ' ':
+        if table[0] == 'X':
+            print('Win to X!')
+            return 1
+        else:
+            print('Win to O!')
+            return 1
+    if table[1] == table[4] and table[4] == table[7] and table[1] != ' ':
+        if table[0] == 'X':
+            print('Win to X!')
+            return 1
+        else:
+            print('Win to O!')
+            return 1
+    if table[2] == table[5] and table[5] == table[8] and table[2] != ' ':
+        if table[0] == 'X':
+            print('Win to X!')
+            return 1
+        else:
+            print('Win to O!')
+            return 1
+    if table[3] == table[4] and table[4] == table[5] and table[3] != ' ':
+        if table[0] == 'X':
+            print('Win to X!')
+            return 1
+        else:
+            print('Win to O!')
+            return 1
+    if table[6] == table[7] and table[7] == table[8] and table[6] != ' ':
+        if table[0] == 'X':
+            print('Win to X!')
+            return 1
+        else:
+            print('Win to O!')
+            return 1
+    if table[0] == table[4] and table[4] == table[8] and table[0] != ' ':
+        if table[0] == 'X':
+            print('Win to X!')
+            return 1
+        else:
+            print('Win to O!')
+            return 1
+    if table[2] == table[4] and table[4] == table[6] and table[2] != ' ':
+        if table[0] == 'X':
+            print('Win to X!')
+            return 1
+        else:
+            print('Win to O!')
+            return 1
+
+i = 0
+table = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
+while True:
+    print_XO(table)
+    if i%2==0:
+        index = int(input('Ход O: '))
+        if index < 1 or index > 9:
+            continue
+        table[index - 1] = 'O'
+    else:
+        index = int(input('Ход X: '))
+        if index < 1 or index > 9:
+            continue
+        table[index - 1] = 'X'
+    os.system('CLS')
+    if win(table) == 1:
+        print_XO(table)
+        break
+    if i == 8:
+        break
+    i += 1
